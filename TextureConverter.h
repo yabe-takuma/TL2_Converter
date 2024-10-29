@@ -28,8 +28,25 @@ private:
 	/// <returns></returns>
 	static std::wstring ConvertMultiByteStringToWideString(const std::string& mString);
 
+	/// <summary>
+	/// フォルダパスとファイル名を分離する
+	/// </summary>
+	/// <param name="filePath"></param>
+	void SeparateFilePath(const std::wstring& filePath);
+
+	/// <summary>
+	/// DDSテクスチャとしてファイル書き出し
+	/// </summary>
+	void SaveDDSTextureToFile();
+
 	DirectX::TexMetadata metadata_;
 
 	DirectX::ScratchImage scratchImage_;
+	//ディレクトリパス
+	std::wstring directoryPath_;
+	//ファイル名
+	std::wstring fileName_;
+	//ファイル拡張子
+	std::wstring fileExt_;
 	
 };
